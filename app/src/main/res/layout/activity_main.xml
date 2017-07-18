@@ -1,29 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:theme="@android:style/Theme.NoTitleBar"
-    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_gravity="center"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.zhao.com.refreshdemo.MainActivity">
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+   >
 
-    <com.zhao.com.refreshdemo.impl.RefreshListView
-        android:id="@+id/swipe_layout"
-        android:layout_width="368dp"
+
+
+
+    <Button
+
+        android:id="@+id/refresh_listview"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:layout_editor_absoluteY="0dp"
-        tools:layout_editor_absoluteX="8dp">
+        android:text="@string/refresh_listview" />
+
+    <Button
+        android:id="@+id/refresh_gridview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/refresh_gridview" />
+
+    <Button
+        android:id="@+id/refresh_imageview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/refresh_tv" />
+
+    <Button
+        android:id="@+id/refresh_recyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/refresh_recyclerview" />
 
 
-        <ListView
-            android:id="@+id/swipe_listview"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:divider="#EEEEEE"
-            android:dividerHeight="1dip"
-            android:fadingEdgeLength="0.0sp"
-            android:fastScrollEnabled="false"
-            android:scrollingCache="false" >
-        </ListView>
-    </com.zhao.com.refreshdemo.impl.RefreshListView>
+
+
 
 </LinearLayout>

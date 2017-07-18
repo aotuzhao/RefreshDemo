@@ -34,6 +34,7 @@ package com.zhao.com.refreshdemo.impl;
 
 import android.content.Context;
 import android.util.AttributeSet;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.zhao.com.refreshdemo.util.RefreshAdaterView;
@@ -74,6 +75,11 @@ public class RefreshListView extends RefreshAdaterView<ListView> {
         // 设置滚动监听器
         mContentView.setOnScrollListener(this);
 
+    }
+
+    //设置点击事件
+    public void setOnItemClickListener(AdapterView.OnItemClickListener listener){
+        mContentView.setOnItemClickListener(listener);
     }
 
     @Override
