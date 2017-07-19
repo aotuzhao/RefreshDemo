@@ -2,7 +2,10 @@ package com.zhao.com.refreshdemo.impl;
 
 import android.content.Context;
 import android.util.AttributeSet;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.GridView;
+import android.widget.Toast;
 
 import com.zhao.com.refreshdemo.util.RefreshAdaterView;
 import com.zhao.com.refreshdemo.util.RefreshLayoutBase;
@@ -14,11 +17,15 @@ import com.zhao.com.refreshdemo.util.RefreshLayoutBase;
 
 public class RefreshGridView extends RefreshAdaterView<GridView> {
     public RefreshGridView(Context context) {
-        super(context);
+        this(context, null);
     }
 
+    /**
+     * @param context
+     * @param attrs
+     */
     public RefreshGridView(Context context, AttributeSet attrs) {
-        super(context, attrs);
+        this(context, attrs, 0);
     }
 
     public RefreshGridView(Context context, AttributeSet attrs, int defStyle) {
@@ -37,6 +44,11 @@ public class RefreshGridView extends RefreshAdaterView<GridView> {
         //设置监听
         mContentView.setOnScrollListener(this);
 
+    }
+
+    //设置点击事件
+    public void setOnItemClickListeren(AdapterView.OnItemClickListener onItemClickListeren){
+        mContentView.setOnItemClickListener(onItemClickListeren);
     }
 
     @Override
