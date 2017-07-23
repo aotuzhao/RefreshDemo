@@ -39,11 +39,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View view) {
         switch (view.getId()){
             case R.id.refresh_listview:
-                Toast.makeText(MainActivity.this,"List刷新",Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this,"ListView",Toast.LENGTH_SHORT).show();
                 startActivity(new Intent(MainActivity.this, RefreshListActivity.class));
                 break;
             case R.id.refresh_gridview:
-                Toast.makeText(MainActivity.this,"Grid刷新",Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this,"GridView",Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(MainActivity.this, RefreshGridActivity.class));
+                break;
+            case R.id.refresh_imageview:
+                Toast.makeText(MainActivity.this,"ImageViewAndTextView",Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(MainActivity.this, RefreshImgAndTxtActivity.class));
+                break;
+            case R.id.refresh_recyclerview:
+                Toast.makeText(MainActivity.this,"RecyclerView",Toast.LENGTH_SHORT).show();
                 startActivity(new Intent(MainActivity.this, RefreshGridActivity.class));
                 break;
         }

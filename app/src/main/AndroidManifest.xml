@@ -20,6 +20,8 @@
             />
         <activity android:name=".activity.RefreshGridActivity"
             />
+        <activity android:name=".activity.RefreshImgAndTxtActivity"/>
+        <activity android:name=".activity.RefreshRecyclerActivity"/>
     </application>
 
 </manifest>
