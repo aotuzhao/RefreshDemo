@@ -5,14 +5,16 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.zhao.com.refreshdemo.R;
 
 
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
-
+    private ImageView imageView;
     private Button listButton;
     private Button gridButton;
     private Button imageButton;
@@ -24,6 +26,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        imageView= (ImageView) findViewById(R.id.my_icon);
+        imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(MainActivity.this,"追逐梦想！",Toast.LENGTH_SHORT).show();
+            }
+        });
+        Glide.with(this).load(R.drawable.grid_n1).into(imageView);
         listButton= (Button) findViewById(R.id.refresh_listview);
         gridButton= (Button) findViewById(R.id.refresh_gridview);
         imageButton= (Button) findViewById(R.id.refresh_imageview);

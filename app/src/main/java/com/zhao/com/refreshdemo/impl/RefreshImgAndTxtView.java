@@ -2,11 +2,9 @@ package com.zhao.com.refreshdemo.impl;
 
 import android.content.Context;
 import android.util.AttributeSet;
-import android.view.LayoutInflater;
+
 import android.widget.LinearLayout;
 
-import com.zhao.com.refreshdemo.R;
-import com.zhao.com.refreshdemo.activity.MainActivity;
 import com.zhao.com.refreshdemo.util.RefreshLayoutBase;
 
 /**
@@ -14,7 +12,9 @@ import com.zhao.com.refreshdemo.util.RefreshLayoutBase;
  */
 
 public class RefreshImgAndTxtView extends RefreshLayoutBase<LinearLayout>{
-
+    public RefreshImgAndTxtView(Context context) {
+        super(context);
+    }
     public RefreshImgAndTxtView(Context context, AttributeSet attrs) {
         super(context, attrs);
     }
@@ -27,8 +27,12 @@ public class RefreshImgAndTxtView extends RefreshLayoutBase<LinearLayout>{
     protected void setupContentView(Context context) {
         mContentView= new LinearLayout(context);
 
+
     }
 
+    public  void setOnClickListener(OnClickListener onClickListener){
+        mContentView.setOnClickListener(onClickListener);
+    }
     @Override
     protected boolean isTop() {
         return false;
