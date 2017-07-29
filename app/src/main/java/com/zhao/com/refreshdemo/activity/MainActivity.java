@@ -17,7 +17,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private ImageView imageView;
     private Button listButton;
     private Button gridButton;
-    private Button imageButton;
     private Button recyclerButton;
 
 
@@ -36,11 +35,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Glide.with(this).load(R.drawable.grid_n1).into(imageView);
         listButton= (Button) findViewById(R.id.refresh_listview);
         gridButton= (Button) findViewById(R.id.refresh_gridview);
-        imageButton= (Button) findViewById(R.id.refresh_imageview);
         recyclerButton= (Button) findViewById(R.id.refresh_recyclerview);
         listButton.setOnClickListener(this);
         gridButton.setOnClickListener(this);
-        imageButton.setOnClickListener(this);
         recyclerButton.setOnClickListener(this);
 
     }
@@ -56,13 +53,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Toast.makeText(MainActivity.this,"GridView",Toast.LENGTH_SHORT).show();
                 startActivity(new Intent(MainActivity.this, RefreshGridActivity.class));
                 break;
-            case R.id.refresh_imageview:
-                Toast.makeText(MainActivity.this,"ImageViewAndTextView",Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(MainActivity.this, RefreshImgAndTxtActivity.class));
-                break;
             case R.id.refresh_recyclerview:
                 Toast.makeText(MainActivity.this,"RecyclerView",Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(MainActivity.this, RefreshGridActivity.class));
+                startActivity(new Intent(MainActivity.this, RefreshRecyclerActivity.class));
                 break;
         }
     }
